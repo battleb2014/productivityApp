@@ -8,7 +8,7 @@ class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      todoList: [{
+      todos: [{
         task: ' ',
         id: ' ',
         completed: false
@@ -31,26 +31,26 @@ class App extends PureComponent {
     }
 
     this.setState({
-      todoList: [...this.state.todoList, newTask],
+      todos: [...this.state.todos, newTask],
       todo: ' '
     })
   }
 
   toggleComplete = (itemId) => {
-    const todoList = this.state.todoList.map(todo => {
+    const todos = this.state.todos.map(todo => {
       if (todo.id === itemId) {
         todo.completed = !todo.completed;
       }
       return todo;
     });
-    this.setState({ todoList, todo: ' ' });
+    this.setState({ todos, todo: ' ' });
   }
 
   removeItems = (event) => {
     event.preventDefault();
     this.setState(prevState => {
       return {
-        todoList: prevState.todos.filter(todo => {
+        todos: prevState.todos.filter(todo => {
           return !todo.completed;
         })
       }
@@ -62,13 +62,13 @@ class App extends PureComponent {
       <div className="App">
         <h1>To-Do</h1>
         <TodoForm
-          todoList={this.state.todoList}
+          todos={this.state.todos}
           value={this.state.todo}
           inputChangeHandler={this.inputChangeHandler}
           addTask={this.addTask}
         />
         <TodoList
-          todoList={this.state.todoList}
+          todos={this.state.todos}
           toggleComplete={this.toggleComplete}
           removeItems={this.removeItems}
         />

@@ -1,6 +1,11 @@
 import React from 'react';
 
 const Todo = (props) => {
+
+    if (props.todo.task === ' ') {
+        return null;
+    }
+
     return (
         <div
             key={props.todo.id}
@@ -8,7 +13,7 @@ const Todo = (props) => {
                 props.toggleComplete(props.todo.id)
             }}
         >
-            <p>{props.todo.task}</p>
+            <p className='list'>{props.todo.task}</p>
         </div>
     )
 }

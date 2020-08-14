@@ -1,16 +1,17 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: white;
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
+  height: auto;
   text-align: center;
   background-color: #f5f5f5;
   width: 600px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 15em 10em;
+  border: 1px solid lightgrey;
 }
 
 .App {
@@ -21,11 +22,34 @@ body {
   font-family: Kalam;
 }
 
+.form {
+  margin-bottom: 10em;
+}
+
 input {
-  margin: 2em;
+  margin: 1.5em;
+  padding: .5em;
 }
 
 button {
   clear: left;
-  margin: 2em;
+  margin: 1.5em;
+  padding: .5em;
+  border-radius: 2em;
+}
+
+button:hover {
+  background-color: skyblue;
+  color: white;
+  cursor: pointer;
+}
+
+.list {
+  border: 1px solid slategrey;
+  font-size: large;
+  height: 2em;
+}
+
+.list:hover {
+  cursor: pointer;
 }

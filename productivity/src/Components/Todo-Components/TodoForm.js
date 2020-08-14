@@ -1,8 +1,13 @@
 import React from 'react';
 
 const TodoForm = (props) => {
+
+    if (props.addTask === ' ') {
+        return null;
+    }
+
     return (
-        <form>
+        <form className='form'>
             <input
                 name='todo'
                 type='text'
