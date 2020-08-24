@@ -8,7 +8,7 @@ body {
   height: auto;
   text-align: center;
   background-color: #f5f5f5;
-  width: 600px;
+  width: 70%;
   margin: 0 auto;
   padding: 0 15em 10em;
   border: 1px solid lightgrey;
@@ -44,12 +44,33 @@ button:hover {
   cursor: pointer;
 }
 
-.list {
+.todoList {
+  display: inline-flex;
+  justify-content: center ;
+  width: 75%;
+  padding: .5em 0;
   border: 1px solid slategrey;
+}
+
+.todoList button {
+  margin: 0;
+  margin-left: 1em;
+  padding: .5em .5em;
+  float: right;
+}
+
+.list {
   font-size: large;
   height: 2em;
 }
 
 .list:hover {
   cursor: pointer;
+}
+
+.checkmark {
+  float: left;
+  height: 1.75em;
+  margin: .1em .2em;
+  visibility: hidden;
 }

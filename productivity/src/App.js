@@ -40,21 +40,24 @@ class App extends PureComponent {
     const todos = this.state.todos.map(todo => {
       if (todo.id === itemId) {
         todo.completed = !todo.completed;
-      }
+        document.getElementById('checkmark').style.visibility = 'visible';
+      } 
       return todo;
     });
-    this.setState({ todos, todo: ' ' });
+    this.setState({ todos, completed: true, todo: ' ' });
   }
 
-  removeItems = (event) => {
+  removeItems = (event, todo) => {
     event.preventDefault();
+    if(todo.id.completed = true) {
     this.setState(prevState => {
       return {
         todos: prevState.todos.filter(todo => {
           return !todo.completed;
         })
-      }
-    })
+      };
+    });
+  }
   }
 
   render() {
@@ -72,6 +75,7 @@ class App extends PureComponent {
           toggleComplete={this.toggleComplete}
           removeItems={this.removeItems}
         />
+        <a href="https://icons8.com/icon/11849/checkmark"></a>
       </div>
     );
   }

@@ -8,12 +8,16 @@ const Todo = (props) => {
 
     return (
         <div
+            className = 'todoList'
             key={props.todo.id}
             onClick={event => {
                 props.toggleComplete(props.todo.id)
             }}
         >
-            <p className='list'>{props.todo.task}</p>
+            <p className='list'>
+                <img src="https://img.icons8.com/color/48/000000/checkmark.png" className='checkmark' id = 'checkmark' />
+                {props.todo.task}
+            </p>
         </div>
     )
 }
